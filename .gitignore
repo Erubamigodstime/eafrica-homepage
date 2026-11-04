@@ -1,0 +1,17 @@
+# dependencies / build output
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# secrets (web/.env.local holds PIXABAY_API_KEY)
+.env*
+
+# local verification captures + saved third-party reference files (Assistantly's HTML/CSS/JS)
+cap/
+
+# misc
+.DS_Store
+npm-debug.log*
+

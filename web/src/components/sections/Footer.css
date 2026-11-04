@@ -1,0 +1,77 @@
+/* ---------- Footer + peeking mascot (mirrors Assistantly footer.foot2, computed values) ---------- */
+.foot2{position:relative;overflow:visible;overflow-x:clip;color:rgba(255,255,255,.72);padding:88px 0 calc(8px + env(safe-area-inset-bottom,0px))}
+.ftop{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2fr);gap:64px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.12)}
+.fbrand{min-width:0}
+.fbrand .brand.light{display:inline-flex;gap:12px}
+.brand.light .brand-mark{width:58px;height:58px;border:0;border-radius:14px}
+.brand.light .brand-mark img{width:36px}
+.brand.light .brand-name{color:#fff;font-size:28px}
+.brand.light .brand-name b{color:var(--lime)}
+.ftag{margin-top:24px;font:300 16px/1.55 var(--fb);color:rgba(255,255,255,.72)}
+.ftag .ftk{font-family:var(--fd);font-weight:500;color:#fff}
+.ftag .ftk+br{display:none}
+.ftag .fts{display:block;margin-top:6px}
+.flab{margin-top:32px;font:400 12px/1.5 var(--fb);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);max-width:40ch}
+.sub{margin-top:16px;display:flex;align-items:center;background:#fff;border-radius:var(--pill);padding:6px;max-width:440px;transition:box-shadow .25s}
+.sub:hover,.sub:focus-visible{box-shadow:0 0 0 3px rgba(189,229,200,.6)}
+.sub-in{flex:1;min-width:0;font:300 17px var(--fb);color:var(--body);padding:10px 18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sub .btn{padding:12px 24px;flex:none}
+.fmsg{min-height:22px;margin-top:10px;font:300 14px var(--fb);color:var(--lime)}
+.fcols{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.fcols h4{font:400 12px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 22px;white-space:nowrap}
+.fcols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.fcols a,.fcols .fco{font:400 17px var(--fd);color:#fff;text-decoration:none;opacity:.92;white-space:nowrap}
+.fcols .fco{opacity:.7}
+.fcols a:hover{opacity:1;color:var(--lime)}
+.fbot{display:flex;align-items:center;gap:40px;padding:28px 0;font:400 15px var(--fd);flex-wrap:wrap}
+.fbot a{color:rgba(255,255,255,.72)}
+.fbot a:hover{color:#fff}
+.pow{margin-left:auto;display:inline-flex;align-items:center;gap:8px;min-height:24px}
+.pow b{font-weight:700;color:#fff}
+
+/* the peek: lion rises out of a clip sitting on the footer's top edge */
+.fpeek{position:absolute;bottom:100%;left:7%;width:220px;z-index:6;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none}
+.fpeek-clip{display:block;position:relative;aspect-ratio:500/335;overflow:visible;clip-path:inset(-80px -40px 0 -40px)}
+.fpeek-clip .uni{position:absolute;left:0;top:0;width:100%;height:auto;transform:translateY(100%);transition:transform .9s cubic-bezier(.3,1.35,.5,1)}
+.fpeek.up .fpeek-clip .uni{transform:translateY(0)}
+.fpeek:focus-visible .fpeek-clip{outline:2px solid var(--lime);outline-offset:4px;border-radius:12px}
+/* front paws gripping the edge: two clipped copies of the same SVG, shifted so the paws sit on the edge */
+.fp-hooves{position:absolute;left:0;top:0;width:100%;aspect-ratio:300/320;z-index:2;pointer-events:none;opacity:0;margin-top:-30.32%;transition:opacity .25s .75s}
+.fpeek.up .fp-hooves{opacity:1}
+.fp-hooves .fh{position:absolute;inset:0;width:100%;height:auto}
+.fp-hooves .fh.l{clip-path:ellipse(8.4% 4.8% at 38.67% 94.4%)}
+.fp-hooves .fh.r{clip-path:ellipse(8.4% 4.8% at 61.33% 94.4%)}
+.fpeek-bub{position:absolute;left:calc(100% - 6px);top:52px;z-index:3;width:150px;max-width:none;white-space:normal;font:500 13px/1.3 var(--fd);letter-spacing:-.01em;color:var(--pine);background:#fff;padding:10px 16px;border:1px solid var(--mist);border-radius:18px 18px 18px 4px;box-shadow:0 18px 30px -18px rgba(11,31,20,.45);transform-origin:0 100%;opacity:0;transform:translateY(8px) scale(.85);transition:opacity .3s,transform .45s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
+.fpeek.talk .fpeek-bub{opacity:1;transform:none}
+.fpeek .cf{left:50%;top:40%}
+@media (prefers-reduced-motion:reduce){.fpeek-clip .uni{transition:none}}
+
+@media (min-width:901px){
+  .foot2{padding-top:44px}
+  .ftop{padding-bottom:30px;gap:56px}
+  .brand.light .brand-mark{width:50px;height:50px;border-radius:12px}
+  .brand.light .brand-mark img{width:32px}
+  .brand.light .brand-name{font-size:24px}
+  .ftag{margin-top:16px}
+  .flab{margin-top:22px}
+  .fcols h4{margin-bottom:16px}
+  .fcols ul{gap:10px}
+  .fcols a,.fcols .fco{font-size:16px}
+  .fbot{padding:18px 0}
+  .fpeek{left:calc(50% + 180px);width:280px}
+  .fpeek-bub{left:calc(100% + 8px);top:44px;font-size:14px;width:max-content;max-width:max(150px,calc(50vw - 488px))}
+}
+@media (min-width:901px) and (max-width:1100px){
+  .fpeek{width:240px;left:calc(50% + 124px)}
+  .fpeek-bub{font-size:12.5px;padding:8px 12px;max-width:max(124px,calc(50vw - 388px))}
+}
+@media (max-width:960px){
+  .ftop{grid-template-columns:minmax(0,1fr)}
+  .fcols{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}
+  .fcols a,.fcols .fco{white-space:normal;overflow-wrap:anywhere}
+}
+@media (max-width:520px){
+  .fbot{gap:16px}
+  .pow{margin-left:0}
+}
+.fp-hooves .mascot *{animation:none!important}

@@ -1,0 +1,5 @@
+.mascot{display:block;width:100%;height:auto;overflow:visible}
+.mascot .m-eyes{transform-box:fill-box;transform-origin:center;animation:mBlink 4.6s infinite}
+.mascot .m-head{transform-box:view-box;transform-origin:150px 200px;transition:transform .5s var(--spring)}
+@keyframes mBlink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.12)}}
+@media (prefers-reduced-motion:reduce){.mascot .m-eyes{animation:none}}

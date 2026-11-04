@@ -1,0 +1,45 @@
+/* ---------- Hero copy (values = reference computed styles) ---------- */
+.hero{padding-top:92px;text-align:center}
+.hero .kick{margin-bottom:24px}
+.hero h1{font-size:clamp(44px,7vw,90px);line-height:.98;letter-spacing:-.022em;font-weight:500;max-width:8.67em;margin:0 auto}
+/* reference: max-width 13ch. `ch` resolves inconsistently while next/font's Montserrat subsets swap in, so it is pinned to 13ch-of-Montserrat in em */
+
+/* underlined phrase + hand-drawn swoosh */
+em.sw{font-style:normal;position:relative;display:inline-block;white-space:nowrap;color:var(--brand)}
+.swoosh{position:absolute;left:-2%;bottom:-.3em;width:104%;height:.26em;overflow:visible;pointer-events:none}
+.swoosh path{fill:none;stroke:var(--red);stroke-width:4;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:swoosh 1.8s .8s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes swoosh{to{stroke-dashoffset:0}}
+
+.hero .big.hp2{font:300 clamp(17px,1.3vw,19px)/1.55 var(--fb);color:var(--body);max-width:720px;margin:36px auto 0}
+.hp2 .ln{display:inline}
+
+/* role picker */
+.hero .w.pick{padding:44px 0 32px}
+.pick #hf{font:500 20px var(--fd);letter-spacing:-.02em;color:var(--pine);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chips a{font:500 14px var(--fd);letter-spacing:-.005em;color:var(--pine);text-decoration:none;padding:8px 16px;border-radius:var(--pill);border:1px solid var(--mist);background:#fff;
+  transition:transform .25s cubic-bezier(.3,1.4,.5,1),background .2s,border-color .2s,box-shadow .25s}
+.chips a:hover{transform:translateY(-2px);box-shadow:0 12px 24px -16px rgba(11,31,20,.45);background:var(--lime-wash);border-color:var(--lime-deep)}
+.chips a:active{transform:scale(.96)}
+.pick .fine{margin-top:12px;font-size:13px;line-height:1.6;letter-spacing:.03em}
+
+/* reference pinegrad sheen: the `background` shorthand resets size/position, so the stripe tiles from 0 0 and slides to -60% on hover */
+.hero .ctas .btn.pinegrad::after{background-size:auto;background-repeat:repeat;background-position:0 0}
+.hero .ctas .btn.pinegrad:hover::after{background-position:-60% 0}
+.hero .ctas{display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:22px;position:relative;z-index:6}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .9s var(--ease) both}
+  .r2{animation-delay:.08s}.r3{animation-delay:.16s}.r4{animation-delay:.24s}
+}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+@media (max-width:720px){
+  .hero{padding-top:72px}
+}
+/* reference: `section:has(.cf){overflow-x:clip}` under 860px (confetti + the overhanging 400px card) */
+@media (max-width:860px){
+  section.hero:has(.cf){overflow-x:clip}
+}
+@media (prefers-reduced-motion:reduce){
+  .swoosh path{stroke-dashoffset:0;animation:none}
+}

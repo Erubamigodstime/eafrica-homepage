@@ -1,0 +1,35 @@
+/* ---------- Logo wall (reference .logos2, inside .nums) ---------- */
+.logos2{margin-top:150px;text-align:center}
+.logos2>p{font:400 12px var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--body);margin-bottom:36px}
+.lrow{list-style:none;margin:0 auto;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px 44px;max-width:1240px;height:52px}
+.lrow+.lrow{margin-top:14px}
+/* our marks are icon + name (the reference uses single-colour wordmark masks); same grey, same hover */
+.lg{display:flex;align-items:center;gap:8px;color:var(--logo);font:700 18px/1 var(--fd);letter-spacing:-.03em;white-space:nowrap;transition:color .25s,transform .3s var(--ease)}
+.lg img{width:24px;height:24px;object-fit:contain;filter:grayscale(1) opacity(.6);transition:filter .25s}
+.lg-txt{width:24px;height:24px;border-radius:6px;background:var(--logo);color:#fff;font-size:12px;display:grid;place-items:center;transition:background .25s}
+.lrow li:hover .lg-txt{background:var(--brand)}
+.lrow li:hover .lg{color:var(--pine);transform:translateY(-2px)}
+.lrow li:hover .lg img{filter:none}
+@media (prefers-reduced-motion:no-preference){
+  .lrow li{animation:lgFloat 6s ease-in-out infinite}
+  .lrow li:nth-child(2n){animation-delay:-1.5s}
+  .lrow li:nth-child(3n){animation-delay:-3s}
+  .lrow li:nth-child(5n){animation-delay:-4.5s}
+  .lrow+.lrow li{animation-duration:7s}
+  .lrow li:hover{animation-play-state:paused}
+}
+@keyframes lgFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+@media (max-width:720px){
+  .lrow{gap:22px 32px}
+  .logos2{display:grid;grid-template-columns:repeat(3,1fr);column-gap:28px;row-gap:30px;justify-items:center;align-items:center;max-width:620px;margin:112px auto 0}
+  .logos2>p{grid-column:1/-1;margin-bottom:6px}
+  .logos2 .lrow{display:contents}
+  .logos2 .lrow li{display:flex;align-items:center;justify-content:center;width:100%;height:22px}
+  .logos2 .lg{font-size:14px;gap:6px;transform:none}
+  .logos2 .lg img,.logos2 .lg-txt{width:18px;height:18px}
+}
+@media (max-width:520px){
+  .logos2{grid-template-columns:1fr 1fr;column-gap:24px;row-gap:28px;max-width:420px;margin-top:96px}
+  .logos2 .lrow li{height:20px}
+}
